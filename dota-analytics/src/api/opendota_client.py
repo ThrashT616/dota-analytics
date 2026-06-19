@@ -1,5 +1,5 @@
 import requests
-from scr.services.hero_service import transform_heroes
+from src.services.hero_service import transform_heroes
 
 BASE_URL = "https://api.opendota.com/api"
 
@@ -9,10 +9,13 @@ def get_heroes():
     return response.json()
 
 if __name__ == "__main__":
-    heroes = get_heroes()
+
+    heroes_api = get_heroes()
+
+    heroes = transform_heroes(heroes_api)
 
     for hero in heroes[:10]:
-        print(hero["localized_name"])
+        print(hero)
 
-heroes = get_heroes()
-print(heroes[0].keys())
+    
+    print(heroes[0].keys())
