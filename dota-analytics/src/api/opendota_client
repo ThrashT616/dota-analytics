@@ -1,0 +1,17 @@
+import requests
+
+BASE_URL = "https://api.opendota.com/api"
+
+def get_heroes():
+    response = requests.get(f"{BASE_URL}/heroes")
+    response.raise_for_status()
+    return response.json()
+
+if __name__ == "__main__":
+    heroes = get_heroes()
+
+    for hero in heroes[:10]:
+        print(hero["localized_name"])
+
+heroes = get_heroes()
+print(heroes[0].keys())
