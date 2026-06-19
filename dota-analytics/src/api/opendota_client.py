@@ -18,4 +18,3 @@ if __name__ == "__main__":
         print(hero)
 
     
-    print(heroes[0].keys())
