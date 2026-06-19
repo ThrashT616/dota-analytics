@@ -1,0 +1,46 @@
+## Quais entidades você acha que existirão no banco?
+    - Match
+    - Player
+    - Hero
+    - PlayerMatch
+    - Item
+    - Ability
+    - Patch
+    - Status
+    - League
+    - Team
+    - ProPlayer
+    - Rankings
+    - PlayerMatchItem
+    - HeroAbility
+    - GameMode
+## Como elas se relacionam?
+
+    Um Hero pode aparecar em milhares de partidas simultâneas.
+
+    Um Match possuí 10 Players.
+
+    Cada player escolhe apenas um Hero naquela Match.
+
+    Um Hero não pode ser pego por mais de 2 Players e caso ambos forem escolhido durante a mesma fase de escolha o Hero é banido e não pode ser jogado nessa partida.
+
+    Um Hero possuí várias habilidades.
+
+    Um Patch pode alterar atributos de Heroes, Items e Abilities. Para o MVP, Patch será usado principalmente para segmentar análises por versão do jogo.
+
+    Um Player, dentro de uma Match, joga com um Hero e pode possuir itens em slots de inventário, mochila e neutral item. Esses itens pertencem à participação do Player naquela Match, não diretamente ao Hero.
+
+    Ranking é calculado de acordo com seu MMR.
+
+
+## MVP Inicial
+
+    O primeiro MVP do projeto irá focar em:
+
+    - Consultar heroes da API OpenDota
+    - Persistir heroes no PostgreSQL
+    - Consultar itens da API OpenDota
+    - Persistir itens no PostgreSQL
+    - Consultar uma partida específica
+    - Persistir Match e PlayerMatch
+    - Criar análises SQL simples
