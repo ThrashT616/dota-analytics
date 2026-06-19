@@ -44,3 +44,31 @@
     - Consultar uma partida específica
     - Persistir Match e PlayerMatch
     - Criar análises SQL simples
+
+
+## Tabela Hero
+
+
+### Origem 
+
+    GET /heroes
+
+### Descrição
+
+Armazenar informações básicas dos heróis disponíveis no Dota 2.
+
+### Estrutura proposta
+    - id INTEGER PRIMARY KEY
+    - name VARCHAR(255)
+    - localized_name VARCHAR(255)
+    - primary_attr VARCHAR(3)
+    - attack_type VARCHAR (15)
+    - roles TEXT[]
+    - legs INTEGER
+
+
+### Observações
+
+    - O campo roles é retornado pela API como uma lista.
+    - Para op MVP será armazedo como TEXT[] no PostgreSQL.
+    - Futuramente poderá ser normalizado em tabelas role e hero_role
