@@ -1,5 +1,7 @@
 import requests
 from src.services.hero_service import transform_heroes
+from src.repositores.hero_repository import insert_hero
+from src.database.connection import get_connection
 
 BASE_URL = "https://api.opendota.com/api"
 
@@ -14,7 +16,9 @@ if __name__ == "__main__":
 
     heroes = transform_heroes(heroes_api)
 
-    for hero in heroes[:10]:
-        print(hero)
+    for hero in heroes:
+        insert_hero(hero)
+        print(f"Processado: {hero['localized_name']}")
 
-    
+    print(f"{len(heroes)} heróis inseridos com sucesso!") 
+
