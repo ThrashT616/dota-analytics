@@ -72,3 +72,32 @@ Armazenar informações básicas dos heróis disponíveis no Dota 2.
     - O campo roles é retornado pela API como uma lista.
     - Para op MVP será armazedo como TEXT[] no PostgreSQL.
     - Futuramente poderá ser normalizado em tabelas role e hero_role
+
+
+## Tabela Item
+
+### Origem
+
+    GET /constants/items
+
+
+### Descrição
+
+Retorna um dicionário onde a chave representa o nome interno do item.
+
+### Estrutura proposta 
+    - id INTEGER PRIMARY KEY
+    - name VARCHAR (255)
+    - dname VARCHAR (255) NOT NULL
+    - qual VARCHAR (255)
+    - cost INTEGER
+    - behavior VARCHAR (100)
+    - mc BOOLEAN
+    - hc BOOLEAN
+    - cd NUMERIC (10,2)
+    - created BOOLEAN
+
+## Observações
+
+    - O campo name não vem como campo dentro do item, ele vem da chave do dicionário.
+    - 

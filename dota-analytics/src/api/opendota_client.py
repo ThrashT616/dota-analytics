@@ -18,3 +18,16 @@ if __name__ == "__main__":
 
     print(f"{len(heroes)} heróis processados com sucesso!")
 
+def get_items():
+    response = requests.get(f"{BASE_URL}/constants/items")
+    response.raise_for_status()
+    return response.json()
+
+if __name__ == "__main__":
+
+    items_api = get_items()
+
+    for key, item in list(items_api.items())[:20]:
+        print(key)
+        print(item)
+        print("-" * 50)
