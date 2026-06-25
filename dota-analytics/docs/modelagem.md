@@ -100,4 +100,40 @@ Retorna um dicionário onde a chave representa o nome interno do item.
 ## Observações
 
     - O campo name não vem como campo dentro do item, ele vem da chave do dicionário.
-    - 
+
+
+
+
+## Tabela Match
+
+
+### Origem
+
+    GET /matches/{match_id}
+
+## Descrição
+
+Retorna informações sobre a partida.
+
+### Estrutura proposta
+    - match_id INTEGER PRIMARY KEY
+    - dire_score INTEGER 
+    - duration  INTEGER 
+    - firts_blood_time INTEGER
+    - leagueid INTEGER 
+    - picks_bans TEXT [] 
+    - radiant_gold_adv INTEGER []
+    - radiant_score INTEGER 
+    - radiant_win BOOLEAN 
+    - radiant_xp_adv INTEGER []
+    - teamfigths TEXT[]
+    - radiant_team TEXT
+    - dire_team TEXT
+    - league TEXT
+    - player TEXT[]
+    - patch INTEGER
+    - region INTEGER
+    - trow INTEGER 
+    - comeback INTEGER 
+    - loss INTEGER
+    - win INTEGER
